@@ -1,1 +1,191 @@
-
+class rbc_rifle_rpk74n: CUP_arifle_AK_Base
+	{
+		author = "Cut by MrBadman";
+		scope = 2;
+		model = "\CUP\Weapons\CUP_Weapons_AK\CUP_rpk74n.p3d";
+		picture = "\CUP\Weapons\CUP_Weapons_AK\data\UI\gear_rpk74_X_CA.paa";
+		magazines[] = {"CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M","CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK74M_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_Subsonic_545x39_AK_M","CUP_30Rnd_TE1_Green_Tracer_545x39_AK_M","CUP_30Rnd_TE1_Red_Tracer_545x39_AK_M","CUP_30Rnd_TE1_White_Tracer_545x39_AK_M","CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK_M","CUP_30Rnd_545x39_AK74M_M","CUP_30Rnd_Subsonic_545x39_AK74M_M","CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M","CUP_30Rnd_TE1_Red_Tracer_545x39_AK74M_M","CUP_30Rnd_TE1_White_Tracer_545x39_AK74M_M","CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK74M_M","CUP_30Rnd_545x39_AK74_plum_M","CUP_30Rnd_Subsonic_545x39_AK74_plum_M","CUP_30Rnd_TE1_Green_Tracer_545x39_AK74_plum_M","CUP_30Rnd_TE1_Red_Tracer_545x39_AK74_plum_M","CUP_30Rnd_TE1_White_Tracer_545x39_AK74_plum_M","CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK74_plum_M","CUP_30Rnd_545x39_AK74M_camo_M","CUP_20Rnd_545x39_AKSU_M","CUP_20Rnd_Subsonic_545x39_AKSU_M","CUP_60Rnd_545x39_AK74M_M","CUP_60Rnd_TE1_Green_Tracer_545x39_AK74M_M","CUP_60Rnd_TE1_Red_Tracer_545x39_AK74M_M","CUP_60Rnd_TE1_White_Tracer_545x39_AK74M_M","CUP_60Rnd_TE1_Yellow_Tracer_545x39_AK74M_M","CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"};
+		magazineWell[] = {"CBA_545x39_AK","CBA_545x39_RPK","AK_545x39"};
+		displayname = "РПК-74Н";
+		recoil = "Recoil_CUP_RPK74";
+		aiDispersionCoefY = 14;
+		aiDispersionCoefX = 14;
+		handAnim[] = {"OFP2_ManSkeleton","\CUP\Weapons\CUP_Weapons_AK\Data\Anim\AK.rtm"};
+		drySound[] = {"CUP\Weapons\CUP_Weapons_AK\data\sfx\Dry",0.56234133,1,10};
+		reloadMagazineSound[] = {"A3\Sounds_F_Exp\arsenal\weapons\Rifles\Rifle_AK47\AK47_reload",1,1,10};
+		modes[] = {"manual","close","short","medium","far_optic1","far_optic2","Single"};
+		jsrs_soundeffect = "JSRS2_Distance_Effects_RPK";
+		initSpeed = -1.0;
+		ACE_barrelTwist = 195.072;
+		ACE_barrelLength = 589.28;
+		deployedPivot = "bipod";
+		hasBipod = 1;
+		soundBipodDown[] = {"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_AAF_down","db-3",1,20};
+		soundBipodUp[] = {"A3\Sounds_F_Mark\arsenal\sfx\bipods\Bipod_AAF_up","db-3",1,20};
+		cameraDir = "eye_look";
+		discretedistance[] = {440,100,200,300,400,500,600,700,800,900,1000};
+		discreteDistanceCameraPoint[] = {"eye","eye_100","eye_200","eye_300","eye_400","eye_500","eye_600","eye_700","eye_800","eye_900","eye_1000"};
+		discretedistanceinitindex = 3;
+		hiddenSelections[] = {"Camo1","Camo2"};
+		hiddenSelectionsTextures[] = {"CUP\Weapons\CUP_Weapons_AK\Data\rpk_body_co.paa","CUP\Weapons\CUP_Weapons_AK\Data\rpk_furniture_co.paa"};
+		class FullAuto: Mode_FullAuto
+		{
+			class BaseSoundModeType{};
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"CUP_ak74_Closure_SoundSet","CUP_akm_Shot_SoundSet","CUP_lmg1_Tail_SoundSet"};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"CUP_ak74_Closure_SoundSet","CUP_akm_ShotSD_SoundSet","CUP_Rifle1_SD_Tail_SoundSet"};
+			};
+			reloadTime = 0.1;
+			ffCount = 30;
+			dispersion = 0.001125;
+			minRange = 0;
+			minRangeProbab = 0.1;
+			midRange = 150;
+			midRangeProbab = 0.7;
+			maxRange = 300;
+			maxRangeProbab = 0.05;
+		};
+		class manual: Mode_FullAuto
+		{
+			class BaseSoundModeType{};
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"CUP_ak74_Closure_SoundSet","CUP_akm_Shot_SoundSet","CUP_lmg1_Tail_SoundSet"};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"CUP_ak74_Closure_SoundSet","CUP_akm_ShotSD_SoundSet","CUP_Rifle1_SD_Tail_SoundSet"};
+			};
+			soundContinuous = 0;
+			soundBurst = 0;
+			minRange = 0;
+			minRangeProbab = 0.3;
+			midRange = 5;
+			midRangeProbab = 0.58;
+			maxRange = 10;
+			maxRangeProbab = 0.04;
+			showToPlayer = 1;
+		};
+		class close: manual
+		{
+			burst = 10;
+			aiRateOfFire = 0.5;
+			aiRateOfFireDistance = 50;
+			minRange = 10;
+			minRangeProbab = 0.05;
+			midRange = 20;
+			midRangeProbab = 0.58;
+			maxRange = 50;
+			maxRangeProbab = 0.04;
+			showToPlayer = 0;
+		};
+		class short: close
+		{
+			burst = 8;
+			aiRateOfFire = 1.5;
+			aiRateOfFireDistance = 300;
+			minRange = 50;
+			minRangeProbab = 0.05;
+			midRange = 150;
+			midRangeProbab = 0.58;
+			maxRange = 300;
+			maxRangeProbab = 0.04;
+		};
+		class medium: close
+		{
+			burst = 12;
+			aiRateOfFire = 2.5;
+			aiRateOfFireDistance = 600;
+			minRange = 200;
+			minRangeProbab = 0.05;
+			midRange = 300;
+			midRangeProbab = 0.58;
+			maxRange = 500;
+			maxRangeProbab = 0.04;
+		};
+		class far_optic1: medium
+		{
+			requiredOpticType = 1;
+			showToPlayer = 0;
+			burst = 3;
+			aiRateOfFire = 10;
+			aiRateOfFireDistance = 1000;
+			minRange = 300;
+			minRangeProbab = 0.05;
+			midRange = 500;
+			midRangeProbab = 0.4;
+			maxRange = 650;
+			maxRangeProbab = 0.01;
+		};
+		class far_optic2: far_optic1
+		{
+			burst = 3;
+			requiredOpticType = 2;
+			minRange = 400;
+			minRangeProbab = 0.05;
+			midRange = 750;
+			midRangeProbab = 0.7;
+			maxRange = 900;
+			maxRangeProbab = 0.01;
+			aiRateOfFire = 10;
+			aiRateOfFireDistance = 900;
+		};
+		class Single: Mode_SemiAuto
+		{
+			class BaseSoundModeType{};
+			class StandardSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"CUP_ak74_Closure_SoundSet","CUP_akm_Shot_SoundSet","CUP_lmg1_Tail_SoundSet"};
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				soundSetShot[] = {"CUP_ak74_Closure_SoundSet","CUP_akm_ShotSD_SoundSet","CUP_Rifle1_SD_Tail_SoundSet"};
+			};
+			reloadTime = 0.1;
+			dispersion = 0.001125;
+			aiRateOfFireDistance = 650;
+			minRange = 400;
+			minRangeProbab = 0;
+			midRange = 600;
+			midRangeProbab = 0;
+			maxRange = 800;
+			maxRangeProbab = 0;
+		};
+		class Library
+		{
+			libTextDesc = "rpk-74";
+		};
+		descriptionShort = "rpk-74";
+		inertia = 0.6;
+		dexterity = 1.4;
+		aimTransitionSpeed = 0.8;
+		class WeaponSlotsInfo: WeaponSlotsInfo
+		{
+			mass = 101.4;
+			class CUP_DovetailMount_AK: CUP_DovetailMount
+			{
+				iconPosition[] = {0.62,0.28};
+				iconScale = 0.15;
+				iconPicture = "\A3\Weapons_F\Data\UI\attachment_top.paa";
+				iconPinPoint = "Bottom";
+			};
+			class CUP_PicatinnySideMountAK: CUP_PicatinnySideMount
+			{
+				iconPosition[] = {0.33,0.34};
+				iconScale = 0.2;
+				iconPicture = "\A3\Weapons_F\Data\UI\attachment_side.paa";
+				iconPinPoint = "Center";
+			};
+			class CUP_EastMuzzleSlotAK: CUP_EastMuzzleSlotPBS4
+			{
+				iconPosition[] = {0.04,0.35};
+				iconScale = 0.15;
+				iconPicture = "\A3\Weapons_F\Data\UI\attachment_muzzle.paa";
+				iconPinPoint = "Right";
+			};
+		};
+	};
