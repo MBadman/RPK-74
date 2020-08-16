@@ -1,0 +1,75 @@
+class CfgPatches
+{
+	class CUP_Weapons_WeaponsCore
+	{
+		units[] = {};
+		weapons[] = {};
+		requiredVersion = 0.1;
+		requiredAddons[] = {"A3_Weapons_F","A3_Weapons_F_Acc","A3_Weapons_F_Beta_Acc","A3_Weapons_F_EPA_Acc","A3_Weapons_F_EPB_Acc","A3_Weapons_F_Bootcamp","A3_Data_F","A3_UI_F","A3_Anims_F"};
+	};
+};
+
+};
+class CfgMovesBasic
+{
+	class DefaultDie;
+	class ManActions
+	{
+		CUP_GestureReloadAK = "CUP_GestureReloadAK";
+	};
+	class Actions
+	{
+		class NoActions: ManActions
+		{
+			CUP_GestureReloadAK[] = {"CUP_GestureReloadAK","Gesture"};
+		};
+		class RifleBaseStandActions;
+		class RifleProneActions: RifleBaseStandActions
+		{
+			CUP_GestureReloadAK[] = {"CUP_GestureReloadAK_prone","Gesture"};
+		};
+		class RifleAdjustProneBaseActions;
+		class RifleAdjustRProneActions: RifleAdjustProneBaseActions
+		{
+			CUP_GestureReloadAK[] = {"CUP_GestureReloadAK_Context","Gesture"};
+		};
+		class RifleAdjustLProneActions: RifleAdjustProneBaseActions
+		{
+			CUP_GestureReloadAK[] = {"CUP_GestureReloadAK_Context","Gesture"};
+			class RifleAdjustFProneActions: RifleAdjustProneBaseActions
+			{
+				CUP_GestureReloadAK[] = {"CUP_GestureReloadAK_Context","Gesture"};
+			};
+		};
+	};
+};
+class CfgGesturesMale
+{
+	class Default;
+	class States
+	{
+		class GestureReloadAKM;
+		class CUP_GestureReloadAK: GestureReloadAKM
+		{
+			file = "CUP\Weapons\CUP_Weapons_WeaponsCore\anim\AK\GestureReloadAK.rtm";
+		};
+		class CUP_GestureReloadAK_prone: GestureReloadAKM
+		{
+			file = "CUP\Weapons\CUP_Weapons_WeaponsCore\anim\AK\GestureReloadAKProne.rtm";
+		};
+		class CUP_GestureReloadAK_Context: CUP_GestureReloadAK
+		{
+			mask = "handsWeapon_context";
+		};
+	};
+};
+class cfgRecoils
+{
+	class recoil_default;
+	class Recoil_CUP_RPK74: recoil_default
+	{
+		muzzleOuter[] = {0.19,0.68,0.2,0.2};
+		kickBack[] = {0.018,0.038};
+		temporary = 0.009;
+	};
+};
