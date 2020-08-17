@@ -5,7 +5,7 @@ class CfgPatches
 		units[] = {};
 		weapons[] = {"CUP_arifle_RPK74","CUP_arifle_RPK74_top_rail","CUP_arifle_RPK74_45","CUP_arifle_RPK74_45_top_rail","CUP_arifle_RPK74M","CUP_arifle_RPK74M_top_rail","CUP_arifle_RPK74M_railed"};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"A3_Weapons_F","A3_Weapons_F_Acc","A3_Weapons_F_Beta_Acc","A3_Weapons_F_EPA_Acc","A3_Weapons_F_EPB_Acc","A3_Weapons_F_Bootcamp","A3_Data_F","A3_UI_F","A3_Anims_F"};
+		requiredAddons[] = {"A3_Weapons_F","A3_Weapons_F_Acc","A3_Weapons_F_Beta_Acc","A3_Weapons_F_EPA_Acc","A3_Weapons_F_EPB_Acc","A3_Weapons_F_Bootcamp","A3_Data_F","A3_UI_F","A3_Anims_F","asdg_jointrails"};
 	};
 };
 
@@ -815,20 +815,38 @@ class Mode_SemiAuto;
 class Mode_Burst;
 class Mode_FullAuto;
 class SlotInfo;
-class CowsSlot;
-class PointerSlot;
+class asdg_OpticRail;
+class asdg_OpticSideMount: asdg_OpticRail
+{
+	class compatibleItems
+	{};
+};
 class CUP_PicatinnyTopMount;
 class CUP_PicatinnyTopShortMount;
 class CUP_PicatinnySideMount;
-class CUP_PicatinnyUnderMount;
-class CUP_DovetailMount;
-class CUP_EastMuzzleSlotPBS4;
-class CUP_EastMuzzleSlot9mm;
-class asdg_MuzzleSlot;
-class asdg_MuzzleSlot_556: asdg_MuzzleSlot
+class CUP_DovetailMount: asdg_OpticSideMount
 {
-	class compatibleItems;
+	scope = 0;
+	linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
+	displayName = "East Dovetail Optics Mount";
 };
+
+class asdg_MuzzleSlot;
+class asdg_MuzzleSlot_545R: asdg_MuzzleSlot
+{
+	class compatibleItems
+	{};
+};
+class CUP_EastMuzzleSlotPBS4: asdg_MuzzleSlot_545R
+{
+	scope = 0;
+	displayName = "Suppressor Attachment";
+	linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+};
+
+
+
+
 class CfgWeapons
 {
 	class Rifle;
