@@ -1,0 +1,134 @@
+class SlotInfo;
+class asdg_OpticRail;
+class asdg_OpticSideMount: asdg_OpticRail
+{
+	class compatibleItems
+	{
+		CUP_optic_PSO_1 = 1;
+		CUP_optic_Kobra = 1;
+		CUP_optic_GOSHAWK = 1;
+		CUP_optic_NSPU = 1;
+		CUP_optic_PSO_3 = 1;
+		CUP_optic_ekp_8_02 = 1;
+		CUP_optic_PSO_1_AK = 1;
+		CUP_optic_PSO_1_open = 1;
+		CUP_optic_PSO_1_open_pip = 1;
+		CUP_optic_PSO_1_AK_open = 1;
+		CUP_optic_PSO_1_AK_open_pip = 1;
+		CUP_optic_PSO_3_open = 1;
+		CUP_optic_PSO_3_open_pip = 1;
+		CUP_optic_PSO_1_1 = 1;
+		CUP_optic_PSO_1_1_open = 1;
+		CUP_optic_PSO_1_1_open_pip = 1;
+		CUP_optic_PechenegScope = 1;
+		CUP_optic_ekp_8_02_01 = 1;
+		CUP_optic_ekp_8_02_02 = 1;
+		CUP_optic_ekp_8_02_03 = 1;
+		CUP_optic_Kobra_01 = 1;
+		CUP_optic_Kobra_02 = 1;
+		CUP_optic_Kobra_03 = 1;
+		CUP_optic_1p63 = 1;
+	};
+};
+class CUP_DovetailMount: asdg_OpticSideMount
+{
+	scope = 0;
+	linkProxy = "\A3\data_f\proxies\weapon_slots\TOP";
+	displayName = "East Dovetail Optics Mount";
+};
+class CUP_PerchenegMount: asdg_OpticRail
+{
+	class compatibleItems
+	{
+		CUP_optic_PechenegScope = 1;
+	};
+};
+class CUP_GrozaTopMount: asdg_OpticRail
+{
+	class compatibleItems
+	{
+		CUP_optic_GrozaScope = 1;
+		CUP_optic_GrozaScope_pip = 1;
+	};
+};
+class asdg_OpticRail1913: asdg_OpticRail
+{
+	class compatibleItems
+	{
+		CUP_optic_GOSHAWK_RIS = 1;
+	};
+};
+class asdg_MuzzleSlot;
+class asdg_MuzzleSlot_545R: asdg_MuzzleSlot
+{
+	class compatibleItems
+	{
+		CUP_muzzle_PBS4 = 1;
+		CUP_muzzle_TGPA = 1;
+		CUP_muzzle_TGPA_desert = 1;
+		CUP_muzzle_TGPA_woodland = 1;
+		CUP_muzzle_snds_KZRZP_AK545 = 1;
+		CUP_muzzle_snds_KZRZP_AK545_desert = 1;
+		CUP_muzzle_snds_KZRZP_AK545_woodland = 1;
+		CUP_muzzle_mfsup_Flashhider_545x39_Black = 1;
+		CUP_muzzle_mfsup_Flashhider_545x39_OD = 1;
+		CUP_muzzle_mfsup_Flashhider_545x39_Tan = 1;
+	};
+};
+class asdg_MuzzleSlot_762R: asdg_MuzzleSlot
+{
+	class compatibleItems
+	{
+		CUP_muzzle_Bizon = 1;
+		CUP_muzzle_snds_KZRZP_AK762 = 1;
+		CUP_muzzle_snds_KZRZP_AK762_desert = 1;
+		CUP_muzzle_snds_KZRZP_AK762_woodland = 1;
+		CUP_muzzle_mfsup_Flashhider_762x39_Black = 1;
+		CUP_muzzle_mfsup_Flashhider_762x39_OD = 1;
+		CUP_muzzle_mfsup_Flashhider_762x39_Tan = 1;
+	};
+};
+class asdg_MuzzleSlot_762R_SVD: asdg_MuzzleSlot
+{
+	class compatibleItems
+	{
+		CUP_muzzle_snds_KZRZP_SVD = 1;
+		CUP_muzzle_snds_KZRZP_SVD_desert = 1;
+		CUP_muzzle_snds_KZRZP_SVD_woodland = 1;
+	};
+};
+class asdg_MuzzleSlot_762R_PK: asdg_MuzzleSlot
+{
+	class compatibleItems
+	{
+		CUP_muzzle_mfsup_Flashhider_PK_Black = 1;
+		CUP_muzzle_mfsup_Flashhider_PK_OD = 1;
+		CUP_muzzle_mfsup_Flashhider_PK_Tan = 1;
+		CUP_muzzle_snds_KZRZP_PK = 1;
+		CUP_muzzle_snds_KZRZP_PK_desert = 1;
+		CUP_muzzle_snds_KZRZP_PK_woodland = 1;
+	};
+};
+class CUP_EastGrozaMuzzleSlot: asdg_MuzzleSlot
+{
+	class compatibleItems
+	{
+		CUP_muzzle_snds_groza = 1;
+	};
+};
+class CUP_EastMuzzleSlotPBS4: asdg_MuzzleSlot_545R
+{
+	scope = 0;
+	displayName = "Suppressor Attachment";
+	linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+};
+class CUP_EastMuzzleSlot9mm: asdg_MuzzleSlot_762R
+{
+	scope = 0;
+	displayName = "Suppressor Attachment";
+	linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+};
+class Mode_SemiAuto;
+class Mode_Burst;
+class Mode_FullAuto;
+};
